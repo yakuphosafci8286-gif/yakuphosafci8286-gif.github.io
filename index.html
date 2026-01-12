@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hoşafçı’nın Karikatür Dünyası</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #4f46e5;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    figure {
+      width: 250px;
+      text-align: center;
+    }
+    figure img {
+      width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    figure img:hover {
+      transform: scale(1.05);
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+    /* Modal (büyük görsel) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: 5% auto;
+      display: block;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hoşafçı’nın Karikatür Dünyası</h1>
+    <p>Yapay zekâ destekli karikatür ve görsel tasarımlar</p>
+  </header>
+
+  <nav>
+    <a href="#bio">Biyografi</a>
+    <a href="#gallery">Galeri</a>
+    <a href="#contact">İletişim</a>
+  </nav>
+
+  <section id="bio">
+    <h2>Biyografi</h2>
+    <p>Yakup Hoşafçı, Maliye Bakanlığı’ndan emekli olduktan sonra yapay zekâ destekli karikatür ve görsel tasarımlar üretmeye başladı. Uluslararası yarışmalara katılıyor ve mizahi bakış açısıyla toplumsal konulara dikkat çekiyor.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Galeri</h2>
+    <div class="gallery">
+      <figure>
+        <img src="karikatur1.jpg" alt="Karikatür 1" onclick="openModal(this.src)">
+        <figcaption>“Günlük hayatın ironisi”</figcaption>
+      </figure>
+      <figure>
+        <img src="karikatur2.jpg" alt="Karikatür 2" onclick="openModal(this.src)">
+        <figcaption>“Toplumsal eleştiri mizahla birleşince”</figcaption>
+      </figure>
+      <figure>
+        <img src="karikatur3.jpg" alt="Karikatür 3" onclick="openModal(this.src)">
+        <figcaption>“Bir kahkaha bin düşünceye bedel”</figcaption>
+      </figure>
+    </div>
+    <p>📌 Not: Görselleri klasörüne ekleyip dosya adlarını buradakiyle aynı yapmalısın.</p>
+  </section>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <section id="contact">
+    <h2>İletişim</h2>
+    <p>E-posta: yakuphosafci8286@gmail.com</p>
+    <p>YouTube: <a href="https://www.youtube.com/yakuphosafc" target="_blank">youtube.com/yakuphosafc</a></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Hoşafçı’nın Karikatür Dünyası</p>
+  </footer>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("myModal").style.display = "block";
+      document.getElementById("modalImg").src = src;
+    }
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
